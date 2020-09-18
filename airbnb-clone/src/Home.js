@@ -6,6 +6,8 @@ function Home() {
   return (
     <div className="home">
       <Banner />
+
+      <div className="home__section"></div>
     </div>
   );
 }
