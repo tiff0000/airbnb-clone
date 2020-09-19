@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Search.css";
-import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRangePicker } from "react-date-range";
+import { Button } from "@material-ui/core";
 import PeopleIcon from "@material-ui/icons/People";
 import { useHistory } from "react-router-dom";
-import { Button } from "@material-ui/core";
 
+// DATE PICKER COMPONENT
 function Search() {
   const history = useHistory();
   const [startDate, setStartDate] = useState(new Date());
@@ -22,6 +23,7 @@ function Search() {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
   }
+
   return (
     <div className="search">
       <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
@@ -35,6 +37,3 @@ function Search() {
 }
 
 export default Search;
-
-// npm i fns
-// npm react-date-range
